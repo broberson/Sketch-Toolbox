@@ -30,8 +30,8 @@
 
 -(void)populate {
     self.nameButton.title = self.plugin.displayName;
-    self.descriptionField.stringValue = self.plugin.desc;
-    self.owner.stringValue = self.plugin.owner;
+    self.descriptionField.stringValue = self.plugin.desc ?: @"";
+    self.owner.stringValue = self.plugin.owner ?: @"";
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
     if (self.plugin.state == PluginStateInstalled) {
         self.actionButton.enabled = YES;
